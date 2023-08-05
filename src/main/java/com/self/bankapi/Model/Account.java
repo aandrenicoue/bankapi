@@ -8,6 +8,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.Instant;
+
 @Entity
 @Table
 @Data
@@ -18,12 +20,12 @@ public class Account {
     @Column(name = "cust_no")
     private String custNo;
     private String cust_ac_no;
-    private String account_type;
+    private AccountType account_type;
     private String ac_desc;
     private String ccy;
     private String branch_code;
-    private String rib_key;
-    private String ac_open_date;
-    private String acy_val_bal;
+    private Integer rib_key;
+    private Instant ac_open_date;
+    private Integer acy_val_bal;
     private String record_stat;
 }

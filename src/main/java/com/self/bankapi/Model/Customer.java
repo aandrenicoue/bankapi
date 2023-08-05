@@ -16,13 +16,14 @@ import lombok.NoArgsConstructor;
 public class Customer {
 
     @Id
-    @Column(name = "cust_no")
+    @Column(name = "cust_no",unique = true)
     private String custNo;
+
     private String unique_id_name;
     private String country;
     private String branch_code;
     private String officer_name;
-    private String customer_type;
+    private CustomerType customer_type;
     private String customer_name;
     private String city;
 }

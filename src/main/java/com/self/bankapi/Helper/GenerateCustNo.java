@@ -15,5 +15,11 @@ public class GenerateCustNo {
         Long number =   customerRepository.count();
         return  String.format("%04d", ++ number );
     }
+    public String accountNumber (String cust_no,int rib,String branch_code){
+
+        //return String.valueOf(branch_code+ cust_no + rib);
+        return String.format("%12d", Integer.valueOf(branch_code+ cust_no + rib) );
+    }
+
 
 }
