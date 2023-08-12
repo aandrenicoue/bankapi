@@ -90,8 +90,9 @@ public class TransactionServiceImpl implements TransactionService{
 
         return  new GetTrnResponse().builder()
                 .transactions(transactions.getContent())
-                .total(transactions.getTotalPages())
-                .currentPage(transactions.getNumber())
+                .total((int) transactions.getTotalElements())
+                .totalPage((int) transactions.getTotalPages())
+                .currentPage(transactions.getNumber() + 1)
                 .build();
     }
 
