@@ -19,10 +19,11 @@ public class CustomerServiceImpl implements CustomerService{
     public CustomerResponse getCustomerInfo(String cust_no) {
 
       Customer  customer =  customerRepository.findByCustNo(cust_no);
-if(customer==null){
-    throw new EntityNotFoundException("Customer not found");
-}
+        if(customer == null){
+            throw new EntityNotFoundException("Customer not found");
+        }
       CustomerResponse customerResponse = CustomerResponse.builder()
+              .custNo(customer.getCustNo())
               .customer_type(customer.getCustomer_type())
               .customer_name(customer.getCustomer_name())
               .city(customer.getCity())

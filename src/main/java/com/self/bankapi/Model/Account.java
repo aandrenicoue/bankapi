@@ -19,7 +19,9 @@ public class Account {
     @Id
     @Column(name = "cust_no")
     private String custNo;
-    private String cust_ac_no;
+
+    @Column(name = "cust_ac_no")
+    private String custAcNo;
     private AccountType account_type;
     private String ac_desc;
     private String ccy;

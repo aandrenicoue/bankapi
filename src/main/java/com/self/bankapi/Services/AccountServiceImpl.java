@@ -16,13 +16,15 @@ public class AccountServiceImpl implements AccountService{
     @Override
     public List<AccountResponse> getAccountInfo(String custNo) {
 
-        //Recuperer la liste des comptes
+        //Get all account
         List<Account> accounts =  accountRepository.getAccountByCustNo(custNo);
 
         //Transformer les accountsList en accountResponseList
         List<AccountResponse> accountResponses = accounts.stream().map(account -> {
            //Transformer les account en accountResponse
             AccountResponse accountResponse = AccountResponse.builder()
+                    .custNo(account.getCustNo())
+                    .cust_ac_no(account.getCustAcNo())
                     .account_type(account.getAccount_type())
                     .ccy(account.getCcy())
                     .ac_open_date(account.getAc_open_date())

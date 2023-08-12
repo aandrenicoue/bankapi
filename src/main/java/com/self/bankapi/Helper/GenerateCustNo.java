@@ -5,6 +5,8 @@ import com.self.bankapi.Repositories.CustomerRepository;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @RequiredArgsConstructor
 @Component
@@ -17,8 +19,11 @@ public class GenerateCustNo {
     }
     public String accountNumber (String cust_no,int rib,String branch_code){
 
-        //return String.valueOf(branch_code+ cust_no + rib);
-        return String.format("%12d", Integer.valueOf(branch_code+ cust_no + rib) );
+        LocalDateTime now = LocalDateTime.now();
+        String formattedDate = now.format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss"));
+
+
+        return formattedDate + cust_no + rib;
     }
 
 

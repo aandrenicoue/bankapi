@@ -8,4 +8,6 @@ import java.util.List;
 
 public interface AccountRepository extends JpaRepository<Account, String> {
     List<Account> getAccountByCustNo(String custNo);
+
+    Account findByCustAcNo(String acNo);
 }

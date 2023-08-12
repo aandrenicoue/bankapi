@@ -36,7 +36,6 @@ public class CustomerSeeder implements CommandLineRunner {
 
 
     @Override
-    @Scheduled(fixedRate = 1)
     public void run(String... args) {
         System.out.print("hello");
         for (int i = 0; i < 20; i++) {
@@ -61,7 +60,7 @@ public class CustomerSeeder implements CommandLineRunner {
             account.setAcy_val_bal(50000);
             account.setRib_key(i);
             account.setBranch_code("004");
-            account.setCust_ac_no(generateCustNo.accountNumber(customer.getCustNo(),i, customer.getBranch_code()));
+            account.setCustAcNo(generateCustNo.accountNumber(customer.getCustNo(),i, customer.getBranch_code()));
             account.setCustNo(customer.getCustNo());
 
             accountRepository.save(account);
@@ -88,7 +87,7 @@ public class CustomerSeeder implements CommandLineRunner {
             account.setAcy_val_bal(10000);
             account.setRib_key(i);
             account.setBranch_code("004");
-            account.setCust_ac_no(generateCustNo.accountNumber(customer.getCustNo(),i, customer.getBranch_code()));
+            account.setCustAcNo(generateCustNo.accountNumber(customer.getCustNo(),i, customer.getBranch_code()));
             account.setCustNo(customer.getCustNo());
 
             accountRepository.save(account);
@@ -115,7 +114,7 @@ public class CustomerSeeder implements CommandLineRunner {
             account.setAcy_val_bal(900000);
             account.setRib_key(i);
             account.setBranch_code("000");
-            account.setCust_ac_no(generateCustNo.accountNumber(customer.getCustNo(),i, customer.getBranch_code()));
+            account.setCustAcNo(generateCustNo.accountNumber(customer.getCustNo(),i, customer.getBranch_code()));
             account.setCustNo(customer.getCustNo());
 
             accountRepository.save(account);
@@ -142,7 +141,7 @@ public class CustomerSeeder implements CommandLineRunner {
             account.setAcy_val_bal(1100000);
             account.setRib_key(i);
             account.setBranch_code("000");
-            account.setCust_ac_no(generateCustNo.accountNumber(customer.getCustNo(),i, customer.getBranch_code()));
+            account.setCustAcNo(generateCustNo.accountNumber(customer.getCustNo(),i, customer.getBranch_code()));
             account.setCustNo(customer.getCustNo());
 
             accountRepository.save(account);
